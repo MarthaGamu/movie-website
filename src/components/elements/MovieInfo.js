@@ -1,12 +1,11 @@
-import React from "react";
-import NoImage from "../images/no_image.jpg";
-import { IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
-import PropTypes from "prop-types";
+import React from 'react';
+import NoImage from '../images/no_image.jpg';
+import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
+import PropTypes from 'prop-types';
 
-import MovieThumb from "./MovieThumb";
-import { StyledMovieInfo } from "../styles/StyledMovieInfo";
-import Movie from "../Movie";
-import { waitForElementToBeRemoved } from "@testing-library/react";
+import MovieThumb from './MovieThumb';
+import { StyledMovieInfo } from '../styles/StyledMovieInfo';
+
 const MovieInfo = ({ movie }) => (
   <StyledMovieInfo backdrop={movie.backdrop_path}>
     <div className="movieinfo-content">
@@ -31,7 +30,7 @@ const MovieInfo = ({ movie }) => (
             <div className="score">{movie.vote_average}</div>
           </div>
           <div className="director">
-            <h3>DIRECTOR{movie.directors.length > 1 ? "S" : ""}</h3>
+            <h3>DIRECTOR{movie.directors.length > 1 ? 'S' : ''}</h3>
             {movie.directors.map((element) => (
               <p key={element.credit_id}>{element.name}</p>
             ))}

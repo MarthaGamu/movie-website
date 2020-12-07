@@ -1,5 +1,5 @@
-import { useState, useEffect, useLayoutEffect } from "react";
-import { POPULAR_BASE_URL } from "../../config";
+import { useState, useEffect } from 'react';
+import { POPULAR_BASE_URL } from '../../config';
 
 export const useHomeFetch = (searchTerm) => {
   const [state, setState] = useState({ movies: [] });
@@ -11,7 +11,7 @@ export const useHomeFetch = (searchTerm) => {
     setError(false);
     setLoading(true);
 
-    const isLoadMore = endpoint.search("page");
+    const isLoadMore = endpoint.search('page');
 
     try {
       const result = await (await fetch(endpoint)).json();
@@ -44,7 +44,7 @@ export const useHomeFetch = (searchTerm) => {
 
   useEffect(() => {
     if (!searchTerm) {
-      sessionStorage.setItem("homeState", JSON.stringify(state));
+      sessionStorage.setItem('homeState', JSON.stringify(state));
     }
   }, [searchTerm, state]);
 
